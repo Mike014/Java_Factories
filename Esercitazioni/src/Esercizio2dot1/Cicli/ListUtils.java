@@ -2,11 +2,10 @@ package Esercizio2dot1.Cicli;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class Advanced {
+public class ListUtils {
 
-    private static final Scanner scanner = new Scanner(System.in);
+    private ListUtils() {}
 
     private static List<Integer> createList() {
         return new ArrayList<>();
@@ -26,10 +25,10 @@ public class Advanced {
             System.out.println(lista.get(i));
     }
 
-    public static List<List<Integer>> dynamicMatrix(List<List<Integer>> lista) {
+    public static List<List<Integer>> dynamicMatrix(List<List<Integer>> lista, List<List<Integer>> valori) {
         for (int i = 0; i < lista.size(); i++)
             for (int j = 0; j < lista.get(i).size(); j++)
-                lista.get(i).set(j, scanner.nextInt());
+                lista.get(i).set(j, valori.get(i).get(j));
 
         return lista;
     }
