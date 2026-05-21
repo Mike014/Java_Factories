@@ -34,22 +34,5 @@ public class Array2D {
         for (int i = 0; i < matrice.length; i++)
             System.out.println(matrice[i][i]);
     }
-
-    public static void main(String[] args) {
-        int[][] matrice = insertMatrix(3, 3);
-        diagonalMatrix(matrice);
-    }
 }
 
-/*
-
-Ogni riga è un oggetto array indipendente allocato separatamente nell'heap
-
-Stack e Heap sono le due aree di memoria che i programmi utilizzano durante l'esecuzione.
-Lo Stack è piccolo, velocissimo e gestisce automaticamente le variabili locali.
-L'Heap è più ampio, flessibile, ma più lento, ed è dedicato all'allocazione dinamica degli oggetti
-
-for (int n : lista)
-            total += n;
-
- */
