@@ -45,6 +45,11 @@ public class Advanced {
     }
 
     public static void diagonaleMatrix(List<List<Integer>> lista) {
+        if (lista.size() != lista.get(0).size()) {
+            System.out.println("La matrice non è quadrata.");
+            return;
+        }
+
         for (int i = 0; i < lista.size(); i++)
             System.out.println(lista.get(i).get(i));
     }
