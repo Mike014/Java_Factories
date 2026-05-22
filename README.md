@@ -1,31 +1,56 @@
-# Java Library Repository
+# Java Factories
 
-A dedicated space for creating, developing, and modularizing reusable Java components and libraries. This repository focuses on implementing clean, maintainable, and scalable code structures adhering to modern object-oriented programming (OOP) principles and standard design patterns.
+A growing collection of reusable Java utility libraries, organized by domain.
+Every module is clean, dependency-free, and ready to drop into any Java project.
+New libraries and use-case modules are added on a regular basis as the project expands.
+
+---
+
+## Requirements
+
+| Tool  | Version |
+|-------|---------|
+| Java  | 17+     |
+| Maven | 3.8+    |
+| JUnit | 5.10    |
+
+---
 
 ## Project Structure
 
-The repository is structured to separate different library concerns and reusable modules:
-
-* **src/**: Contains the source code for the developed modules and Java classes.
-* **docs/**: Documentation regarding architectural decisions, class diagrams, and design notes. // In progress
-
-## Design Goals
-
-* **High Cohesion & Low Coupling**: Designing components with focused responsibilities and minimal dependencies.
-* **Immutability**: Encouraging data integrity through modern Java features like Records and immutable patterns where applicable.
-* **Fail-Fast Design**: Implementing strong input validation within constructors and services to prevent invalid application states.
-
-## Getting Started
-
-### Prerequisites
-
-* Java Development Kit (JDK) 17 or higher
-* A modern IDE (IntelliJ IDEA, Eclipse, or VS Code)
-
-### Setup
-
-Clone the repository locally to explore or integrate the components:
-
-
+```
+src/
+├── main/java/com/javafactories/
+│   ├── primitives/    Type conversion utilities
+│   ├── strings/       String manipulation utilities
+│   ├── math/          Math and number utilities
+│   ├── collections/   Array, List and Matrix utilities
+│   ├── geometry/      Geometric shapes hierarchy
+│   ├── people/        Person, Student and WorkingStudent hierarchy
+│   ├── employees/     Employee, Manager and Director hierarchy
+│   └── vehicles/      Vehicle hierarchy
+└── test/java/com/javafactories/
+    └── ...            JUnit 5 tests mirroring the main structure
+```
 
 ---
+
+## Build & Test
+
+```bash
+mvn test     # run all JUnit 5 tests
+mvn package  # build → target/java-factories-1.0.0.jar
+```
+
+---
+
+## Roadmap
+
+- `algorithms` — sorting, searching, recursion
+- `io` — file reading/writing helpers
+- `functional` — higher-order function patterns
+- `datastructures` — stacks, queues, linked lists, trees
+
+> New real-world use-case modules will be added progressively as the project grows.
+
+
