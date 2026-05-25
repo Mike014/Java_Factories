@@ -13,7 +13,7 @@ public class ListUtilsV2 {
 
     // --- List<String> ---
 
-    public List<String> addNames(List<String> lista) {
+    public static List<String> addNames(List<String> lista) {
         String keyword = myObj.nextLine();
         while (!keyword.equals("Stop")) {
             lista.add(keyword);
@@ -22,23 +22,23 @@ public class ListUtilsV2 {
         return lista;
     }
 
-    public void printNames(List<String> lista) {
+    public static void printNames(List<String> lista) {
         for (String n : lista)
             System.out.println(n);
     }
 
-    public void printThirdElement(List<String> lista) {
+    public static void printThirdElement(List<String> lista) {
         if (lista.size() > 2)
             System.out.println(lista.get(2));
         else
             System.out.println("Indice non valido");
     }
 
-    public void replaceElement(List<String> lista, String newName) {
+    public static void replaceElement(List<String> lista, String newName) {
         lista.set(1, newName);
     }
 
-    public void removeElement(List<String> lista) {
+    public static void removeElement(List<String> lista) {
         lista.remove(lista.size() - 1);
     }
 
@@ -46,7 +46,7 @@ public class ListUtilsV2 {
         return lista.contains(element);
     }
 
-    public int containedPosition(List<String> lista, String element)
+    public static int containedPosition(List<String> lista, String element)
     {
         if (checkElement(lista, element))
         {
@@ -55,14 +55,14 @@ public class ListUtilsV2 {
         return -1;
     }
 
-    public List<String> convertArrayToLists(String[] arr)
+    public static List<String> convertArrayToLists(String[] arr)
     {
         return Arrays.asList(arr);
     }
 
     // --- List<Integer> ---
 
-    public List<Integer> addNumbers(List<Integer> numeri) {
+    public static List<Integer> addNumbers(List<Integer> numeri) {
         Integer keyword = myObj.nextInt();
         while (keyword != -1) {
             numeri.add(keyword);
@@ -71,22 +71,22 @@ public class ListUtilsV2 {
         return numeri;
     }
 
-    public int sumNumbers(List<Integer> numeri) {
+    public static int sumNumbers(List<Integer> numeri) {
         int sum = 0;
         for (int n : numeri)
             sum += n;
         return sum;
     }
 
-    public void removeEven(List<Integer> numeri) {
+    public static void removeEven(List<Integer> numeri) {
         numeri.removeIf(n -> n % 2 == 0);
     }
 
-    public void sortNumbers(List<Integer> numeri) {
+    public static void sortNumbers(List<Integer> numeri) {
         numeri.sort(null);
     }
 
-    public void reverseNumbers(List<Integer> numeri) {
+    public static void reverseNumbers(List<Integer> numeri) {
         Collections.reverse(numeri);
     }
 }
