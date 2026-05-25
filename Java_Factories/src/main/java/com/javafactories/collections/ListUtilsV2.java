@@ -1,0 +1,92 @@
+package com.javafactories.collections;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.List;
+
+public class ListUtilsV2 {
+    private final Scanner myObj = new Scanner(System.in);
+
+    public ListUtilsV2() {
+    }
+
+    // --- List<String> ---
+
+    public List<String> addNames(List<String> lista) {
+        String keyword = myObj.nextLine();
+        while (!keyword.equals("Stop")) {
+            lista.add(keyword);
+            keyword = myObj.nextLine();
+        }
+        return lista;
+    }
+
+    public void printNames(List<String> lista) {
+        for (String n : lista)
+            System.out.println(n);
+    }
+
+    public void printThirdElement(List<String> lista) {
+        if (lista.size() > 2)
+            System.out.println(lista.get(2));
+        else
+            System.out.println("Indice non valido");
+    }
+
+    public void replaceElement(List<String> lista, String newName) {
+        lista.set(1, newName);
+    }
+
+    public void removeElement(List<String> lista) {
+        lista.remove(lista.size() - 1);
+    }
+
+    public boolean checkElement(List<String> lista, String element) {
+        return lista.contains(element);
+    }
+
+    public int containedPosition(List<String> lista, String element)
+    {
+        if (checkElement(lista, element))
+        {
+            return lista.indexOf(element);
+        }
+        return -1;
+    }
+
+    public List<String> convertArrayToLists(String[] arr)
+    {
+        return Arrays.asList(arr);
+    }
+
+    // --- List<Integer> ---
+
+    public List<Integer> addNumbers(List<Integer> numeri) {
+        Integer keyword = myObj.nextInt();
+        while (keyword != -1) {
+            numeri.add(keyword);
+            keyword = myObj.nextInt();
+        }
+        return numeri;
+    }
+
+    public int sumNumbers(List<Integer> numeri) {
+        int sum = 0;
+        for (int n : numeri)
+            sum += n;
+        return sum;
+    }
+
+    public void removeEven(List<Integer> numeri) {
+        numeri.removeIf(n -> n % 2 == 0);
+    }
+
+    public void sortNumbers(List<Integer> numeri) {
+        numeri.sort(null);
+    }
+
+    public void reverseNumbers(List<Integer> numeri) {
+        Collections.reverse(numeri);
+    }
+}
