@@ -16,8 +16,6 @@ public class HashSetUtils implements AutoCloseable {
             System.out.println(n);
     }
 
-    public static List<Integer> convertSetToList(Set<Integer> set) {
-        return new ArrayList<Integer>(set);
     public List<Integer> convertSetToList(Set<Integer> set) {
         return new ArrayList<>(set);
     }
