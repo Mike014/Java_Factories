@@ -2,12 +2,12 @@ package com.javafactories.collections;
 
 import java.util.*;
 
-public class HashSetUtils {
+public class HashSetUtils implements AutoCloseable {
     private final Scanner myObj = new Scanner(System.in);
 
-    private HashSetUtils() {}
+    public HashSetUtils() {}
 
-    public static boolean checkElement(Set<Integer> set, int num) {
+    public boolean checkElement(Set<Integer> set, int num) {
         return set.contains(num);
     }
 
@@ -18,6 +18,8 @@ public class HashSetUtils {
 
     public static List<Integer> convertSetToList(Set<Integer> set) {
         return new ArrayList<Integer>(set);
+    public List<Integer> convertSetToList(Set<Integer> set) {
+        return new ArrayList<>(set);
     }
 
     public static TreeSet<Integer> sortSet(Set<Integer> set)
@@ -41,5 +43,11 @@ public class HashSetUtils {
         Set<Integer> result = new HashSet<>(A);
         result.removeAll(B);
         return result;
+    }
+
+    @Override
+    public void close()
+    {
+        myObj.close();
     }
 }

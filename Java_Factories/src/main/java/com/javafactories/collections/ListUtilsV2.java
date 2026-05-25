@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Scanner;
 import java.util.List;
 
-public class ListUtilsV2 {
+public class ListUtilsV2 implements AutoCloseable {
     private final Scanner myObj = new Scanner(System.in);
 
     public ListUtilsV2() {
@@ -88,5 +88,11 @@ public class ListUtilsV2 {
 
     public static void reverseNumbers(List<Integer> numeri) {
         Collections.reverse(numeri);
+    }
+
+    @Override
+    public void close()
+    {
+        myObj.close();
     }
 }
